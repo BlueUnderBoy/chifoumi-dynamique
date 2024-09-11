@@ -5,7 +5,7 @@ get("/") do
   erb(:homepage)
 end
 
-get("/dice/[RANDOM DICE]/[RANDOM SIDES]") do
+get("/dice/[RANDOM_DICE]/[RANDOM_SIDES]") do
   @num_dice = rand(1..5)
   @sides = rand(1..20)
   @rolls = []
