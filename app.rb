@@ -6,12 +6,12 @@ get("/") do
 end
 
 get("/dice/[RANDOM_DICE]/[RANDOM_SIDES]") do
-  @num_dice = rand(1..5)
-  @sides = rand(1..20)
+  @random_dice = rand(2..100)
+  @random_sides = rand(2..100)
   @rolls = []
 
-  @num_dice.times do
-    die = rand(1..@sides)
+  @random_dice.times do
+    die = rand(1..@random_sides)
 
     @rolls.push(die)
   end
