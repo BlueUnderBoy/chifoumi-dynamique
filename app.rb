@@ -15,7 +15,7 @@ get("/dice/[RANDOM_DICE]/[RANDOM_SIDES]") do
 
     @rolls.push(die)
   end
-  erb(:random)
+  redirect to("/dynamic/#{@random_dice}/#{@random_sides}")
 end
 
 get("/dynamic/:number_of_dice/:how_many_sides") do
