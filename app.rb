@@ -5,6 +5,19 @@ get("/") do
   erb(:homepage)
 end
 
+get("/dice/[RANDOM DICE]/[RANDOM SIDES]") do
+  @num_dice = rand(1..5)
+  @sides = rand(1..20)
+  @rolls = []
+
+  @num_dice.times do
+    die = rand(1..@sides)
+
+    @rolls.push(die)
+  end
+  erb(:random)
+end
+
 get("/dynamic/:number_of_dice/:how_many_sides") do
   @num_dice = params.fetch("number_of_dice").to_i
 
